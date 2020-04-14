@@ -7,14 +7,62 @@
         <title>LightUp Solver Manual</title>
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+        <link href="/sudoku20171003a.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <h1>Solve Your LightUp Puzzle at the Push of a Button!</h1>
+        <table id="puzzleContainer" border="0" cellspacing="0" cellpadding="0">
+            <tbody><tr><td><center><div id="puzzlediv"><table class="lightuptable"><tbody><tr><td class="lightup"><img id="square0" src="gifs_lightup/clue0.gif"></td><td class="lightup"><img id="square1" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square2" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square3" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square4" src="gifs_lightup/whte.gif"></td></tr><tr><td class="lightup"><img id="square5" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square6" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square7" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square8" src="gifs_lightup/clue0.gif"></td><td class="lightup"><img id="square9" src="gifs_lightup/whte.gif"></td></tr><tr><td class="lightup"><img id="square10" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square11" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square12" src="/gifs_lightup/clueB.gif"></td><td class="lightup"><img id="square13" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square14" src="gifs_lightup/whte.gif"></td></tr><tr><td class="lightup"><img id="square15" src="gifs_lightup/whte.gif"></td><td class="lightup"><img id="square16" src="gifs_lightup/whte.gif"></td><td class="lightup"><img id="square17" src="gifs_lightup/whte.gif"></td><td class="lightup"><img id="square18" src="gifs_lightup/whte.gif"></td><td class="lightup"><img id="square19" src="gifs_lightup/whte.gif"></td></tr><tr><td class="lightup"><img id="square20" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square21" src="/gifs_lightup/whte.gif"></td><td class="lightup"><img id="square22" src="gifs_lightup/clue1.gif"></td><td class="lightup"><img id="square23" src="gifs_lightup/clue2.gif"></td><td class="lightup"><img id="square24" src="gifs_lightup/whte.gif"></td></tr></tbody></table></div></center></td></tr>
+            
+            <tr><td><img width="300" height="1" src="/gifs/sp.gif">&nbsp;</td></tr>
+            <tr><td>
+            <p class="sbc"><span id="showtext">April 11 - Easy 5 x 5</span><br><br><a class="sb" onclick="alert('This link will load in a new window so your current puzzle is not lost.');return true;" href="copyright.asp#copyright" target="_blank">Copyright © Kevin Stone</a></p>
+            <p class="c">
+            <a class="ignore" onclick="alert('This link will load in a new window so your current puzzle is not lost.');return true;" href="lightuphelp.asp" target="_blank"><img class="ph2" alt="Help" src="/gifs/help.gif" border="0"></a>
+            <a class="ignore" onclick="showanswer();return false;" href="#"><img class="ph2" alt="Show Answer" src="/gifs/answer2.gif" border="0"></a>
+            <a class="ignore" onclick="return checknew();" href="lightup.asp"><img class="ph2" alt="New Light Up" src="/gifs/new.gif" border="0"></a><br>
+            <a class="ignore" onclick="return checknew();" href="showlightup.asp?date=0411&amp;size=5&amp;diff=Easy"><img class="ph2" alt="Restart" src="gifs/restart.gif" border="0"></a>
+            <a class="ignore" href="/lightupprint.asp?date=0411&amp;size=5&amp;diff=Easy" target="_blank"><img class="ph2" alt="Print" src="/gifs/print2.gif" border="0"></a>
+            <a class="ignore" onclick="check('Y');return false;" href="#"><img class="ph2" alt="Check" src="gifs/check.gif" border="0"></a>
+            </p>
+            <p class="c">
+            <input id="showincorrect" type="checkbox"> Show mistakes when checking<br>
+            <input id="highlightclues" onclick="untickall();" type="checkbox" checked=""> Highlight clues
+            </p>
+            </td>
+            </tr>
+            </tbody></table>
         <p>What up it's ya boy.</p>
         <img src="GROUPPIC.png"/>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script language="javascript" src="include/lightup20200106a.js"></script>
+        <script language="JavaScript" type="text/javascript">
+            <!--
+            lcpuzzletext = 'April 11 - Easy 5 x 5';
+            lnclock = new Date();
+            lnsize = 5;
+            lcpuzzle = "0.......0...B.........12.";
+            lcanswer = "nnynnnnnnnynnnnnnnynnynny";
+            lcclickallowed = "Y";
+            var latd = new Array(lnsize * lnsize);
+            var laimg = new Array(lnsize * lnsize);
+            var lalit = new Array(lnsize * lnsize);
+            var laclues = new Array(lnsize * lnsize);
+            
+            function loaded()
+            {
+                lowarning = getObject('javascriptwarning');
+                if (lowarning==null) return;
+                lowarning.innerHTML = "";
+            
+                drawtable();
+                startclock();
+            }
+            //-->
+            </script>
+            <div id="javascriptwarning" name="javascriptwarning"></div>
+
     </body>
 </html>
