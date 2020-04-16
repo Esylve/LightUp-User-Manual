@@ -32,3 +32,7 @@ body {
  .stuff p{
     margin: 200 px;
  }
+ .mastfoot{
+     bottom: 0;
+     background-color: #ffffff;
+ }
