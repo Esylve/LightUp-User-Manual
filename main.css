@@ -22,17 +22,13 @@ body {
     
 }
 
-.navlink{
-    color: white;
-}
+
  .navbar img{
      height: 40px;
      width:40px;
      margin: 2px;
  }
- .dropdown-item a{
-    color:black;
- }
+ 
  .stuff p{
     margin: 200 px;
  }
