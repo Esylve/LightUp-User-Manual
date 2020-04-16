@@ -15,7 +15,9 @@ body {
 		background-position: 0% 50%;
 	}
 }
-
+body h1{
+    font-family: 'Josefin Sans', sans-serif;
+}
 .stuff{
     color:#ffffff;
     font-family: Arial, Helvetica, sans-serif;
