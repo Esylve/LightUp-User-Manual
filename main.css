@@ -38,7 +38,7 @@ color: #242424
     margin: 200 px;
  }
  .mastfoot{
-     position: absolute;
+     position: fixed;
      bottom: 0;
      background-color: #ffffff;
      padding:10px;

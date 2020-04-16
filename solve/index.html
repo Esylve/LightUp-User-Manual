@@ -55,24 +55,27 @@
         <main class="inner cover container text-center stuff" role="main">
             <br><br><br>
             <h1 id="dataHeader">How to Construct the Data File</h1><br>
-            <ol>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li> 
-                <li>Sit amet tellus cras adipiscing. Et magnis dis parturient montes nascetur.</li>
-                <li>Neque volutpat ac tincidunt vitae semper quis lectus nulla at.</li>  
-                <li>Aliquet nibh praesent tristique magna sit amet purus gravida.</li> 
-                <li>Sed ullamcorper morbi tincidunt ornare massa eget egestas. </li>
-                <li>Felis eget nunc lobortis mattis aliquam. </li>
-            </ol>
+            <p>Download the excel file below. Once there, follow the directions to recreate your 
+                puzzle in the excel sheet. Everytime you want to start a new puzzle, this will be the step
+                 you start at. Once you've finished, a program will run and a seperate sheet will
+                create the data you need to finish the solver. Save the sheet as "lightupdat.txt" and move
+                on to the next step.<br><br>
+                <a class="btn btn-lg btn-outline-light" href="#">&#10515; | Download Excel File</a><br>
+            </p>
             <br><br><br>
             <h1 id="runHeader">How to Run AMPL</h1><br>
-            <ol>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li> 
-                <li>Sit amet tellus cras adipiscing. Et magnis dis parturient montes nascetur.</li>
-                <li>Neque volutpat ac tincidunt vitae semper quis lectus nulla at.</li>  
-                <li>Aliquet nibh praesent tristique magna sit amet purus gravida.</li> 
-                <li>Sed ullamcorper morbi tincidunt ornare massa eget egestas. </li>
-                <li>Felis eget nunc lobortis mattis aliquam. </li>
-            </ol>
+            <p> Double-click "sw.exe."
+                You will be prompted to enter commands. <kbd><kbd>ctrl</kbd> + <kbd>c</kbd></kbd> and <kbd><kbd>ctrl</kbd> + <kbd>v</kbd></kbd> the commands below. 
+                Make sure to press <kbd>Enter</kbd> after each line. </p>
+            <pre>sw:<code>ampl</code>
+            apml:<code>option solver cplex;</code>
+            ampl;<code>option cplex_options 'sensitivity';</code>
+            ampl:<code>model lightupmod.txt;</code>
+            ampl:<code>data lightupdat.txt;</code>
+            ampl:<code>solve;</code>
+            ampl:<code>display x;</code></pre>
+            <br><br>
+            <a class="btn btn-lg btn-outline-light" href="https://esylve.github.io/interpret/#resultsHeader">Continue Tutorial &#10157;</a>
             </main>
         </div>
             <footer class="mastfoot mt-auto">
