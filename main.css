@@ -1,7 +1,7 @@
 body {
 	background: linear-gradient(-45deg, #50c7bb, #53e067, #5d71cf, #a67fd8);
 	background-size: 800% 800%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 45s ease infinite;
 }
 
 @keyframes gradient {
@@ -19,9 +19,7 @@ body {
 .stuff{
     color:#ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 40 px;
-    top: 500 px;
-
+    
 }
 
 .navbar a{
@@ -30,4 +28,11 @@ body {
  .navbar img{
      height: 40px;
      width:40px;
+     margin: 2px;
+ }
+ .dropdown-item{
+    color:black;
+ }
+ .stuff p{
+    margin: 200 px;
  }
