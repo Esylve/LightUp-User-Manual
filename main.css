@@ -30,7 +30,7 @@ body {
      width:40px;
      margin: 2px;
  }
- .dropdown-item{
+ .dropdown-item a{
     color:black;
  }
  .stuff p{
