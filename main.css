@@ -2,7 +2,6 @@ body {
 	background: linear-gradient(-45deg, #50c7bb, #53e067, #5d71cf, #a67fd8);
 	background-size: 800% 800%;
     animation: gradient 45s ease infinite;
-    height:2000px;
 }
 
 @keyframes gradient {
@@ -31,16 +30,16 @@ color: #242424
     color: #000000
     }
 
- .navbar img{
+.navbar img{
      height: 40px;
      width:40px;
      margin: 2px;
  }
  
- .stuff p{
+.stuff p{
     margin: 200 px;
  }
- .mastfoot{
+.mastfoot{
      position: fixed;
      bottom: 0;
      background-color: #ffffff;
@@ -48,6 +47,9 @@ color: #242424
      width: 100%;
      text-align: center;
  }
- code{
+.code{
      color:darkslateblue;
  }
+.main{
+    height: 1000px;
+}
