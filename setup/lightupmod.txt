@@ -9,10 +9,11 @@ param IndLit{r in 1..R, c in 1..C, i in 1..R, j in 1..C};
 var x{r in 0..R+1, c in 0..C+1} binary;
 
 
-maximize Lightbulbs: 0;
+maximize Lightbulbs:
+0;
 subject to
 BlackBox{r in 1..R, c in 1..C}: x[r,c] <= W[r,c];
 WhiteCellsLit{r in 1..R, c in 1..C}: x[r,c]+sum{i in 1..R, j in 1..C}IndLit[r,c,i,j]*x[i,j] >= W[r,c];
 Exclusivity{r in 1..R, c in 1..C, i in 1..R, j in 1..C}: x[r,c] <= 1- IndLit[r,c,i,j]*x[i,j];
-Neighboring Constraint{k in 1..K}: x[N[k,1]-1,N[k,2]] + x[N[k,1]+1,N[k,2]] + x[N[k,1],N[k,2]-1] + x[N[k,1],N[k,2]+1] = N[k,3];
+NeighboringConstraint{k in 1..K}: x[N[k,1]-1,N[k,2]] + x[N[k,1]+1,N[k,2]] + x[N[k,1],N[k,2]-1] + x[N[k,1],N[k,2]+1] = N[k,3];
 Border: x[r,c] = 0;
