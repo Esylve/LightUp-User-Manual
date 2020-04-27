@@ -9,7 +9,12 @@
         <link rel="stylesheet" href="https://esylve.github.io/main.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    </head>
+        <style>
+          .main img{
+            height: 100 px;
+        }
+        </style>
+      </head>
     <body>
         <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <header class="masthead mb-auto">
@@ -59,10 +64,107 @@
             <p>Download the excel file below. Once there, follow the directions to recreate your 
                 puzzle in the excel sheet. Everytime you want to start a new puzzle, this will be the step
                  you start at. Once you've finished, a program will run and a seperate sheet will
-                create the data you need to finish the solver. Save the sheet as "lightupdat.txt" and move
-                on to the next step.<br><br>
+                create the data you need to finish the solver. <br><br>
                 <a class="btn btn-lg btn-outline-light" href="#">&#10515; | Download Excel File</a><br>
             </p>
+            <p><strong>Important:</strong> The <em>AMPL_File_Generator.xlsm</em> was coded to export data to windows systems only. Although, it will collect the data and simulate the light path for Mac users, but it won’t export the data automatically.</p>
+
+              <p><strong><u>Overview of the Data File:</u></strong></p>
+              <img src="Fol1.JPG"/>
+              
+              <p>Main areas of the file:<br>
+              <strong>Orange:</strong> Area to enter the puzzle data.<br>
+              <strong>Yellow: </strong>Area to enter the size of the puzzle.<br>
+              <strong> Blue: </strong>IndLit data.</p>
+              
+              <p>Buttons of the file:<br>
+              <strong>“Run!”:</strong> This button starts the light path simulation and collection of data.<br>
+              <strong>“Clear output”: </strong>This button clears all the data collected and displayed. This button is there for user’s convenience. Every time “Run” is pressed the previously recorded data is automatically cleared out the memory before the code starts collecting the new data set.<br>
+              <strong>“Export Output”: </strong>This button compiles the data collected into a ready to use data file on AMPL.<br>
+              <strong>“Clear Puzzle”: </strong>This button erases the information written into the puzzle area.<br>
+              <strong>“Retrieve default puzzle (20x20)”: </strong>This button retrieves the default 20x20 puzzle proposed in this project.
+              </p>
+              
+              <p>The data on the right of the highlighted Blue Area it is for user’s reference, only. The displayed data makes easier for the user to double check the white and black boxes’ location on the puzzle area. Although, any necessary alteration on a black box’s location has to be done in the puzzle area.
+              </p>
+              <p>1)	First, find the puzzle you want to solve on <a href="http://brainbashers.com/lightup.asp">http://brainbashers.com/lightup.asp</a>.<br>
+              
+              This is the one we chose: </p>
+              <img src="fol2.JPG"/>
+              <p>
+              <a href="http://brainbashers.com/lightup.asp">http://brainbashers.com/lightup.asp</a><br>
+              Easy 5x5 April 25, 2020
+              </p> 
+              
+              <p>
+              2)	Then download and open the excel file labeled “AMPL_data_File_Generator.xlsm” 
+              <br>As soon you will the yellow bar on top of the file asking to Enable Content:
+              </p>
+              <img src="fol3.JPG"/>
+               <p>
+              (Windows User)</p>
+              
+              
+             <strong> IMPORTANT:</strong> Before starting using the file make sure to <strong>Enable Macros</strong>.
+              
+              
+              
+              <p>
+              3)	After opening the file, you will see the default puzzle, 20x20, displayed on the puzzle area. To create the data file for that puzzle you just need to click on the button “Run!” and watch the simulation of the light path while the data file is being created for you. 
+              Otherwise jump to step 6 to enter your own puzzle.</p>
+              <img src="fol4.JPG"/>
+               
+              
+              <p>
+              4)	Once the message box shows, the data collection is done, Press “Ok”.
+              </p>
+              <img src="fol5.JPG"/>
+              
+              <p>
+              5)	Now you can export the data file straight to your computer. Click on the button “Export Output”. Then a Save as window will pop-up. Chose a name for the file and a location to save it. The extension of the file is fixed as “.txt” by default, that is the file you will need to load into AMPL to get the solution for your puzzle
+              </p>
+               
+              <img src="fol6.PNG"/>
+              
+              
+              <p>
+              6)	To enter your own puzzle, first you need to click the “Clean Puzzle” button to erase all the information in the puzzle area. 
+              The message box bellow will appear, Press “Ok” to continue.
+              </p>
+              
+              <img src="fol6.JPG"/>
+              
+              
+              
+              <p>
+              7)	After clearing the puzzle area, erase the values of Rows and Columns from previous game, and enter the right size of the puzzle you have chosen
+              In our case, our puzzle is a 5x5, Rows 5, Columns 5:
+              </p>
+              <img src="fol7.JPG"/>
+              
+              <p>8)	Fill up the empty puzzle area with the data from the puzzle you have chosen. You will have to enter the value of the black boxes into the right row and column. For the black boxes without a number on it, enter “<strong>x</strong>” to mark the placement of the empty black box. 
+              <br>Note that the rows are indicated by the number on the green cells and the columns by the numbers on the pink cells.
+              <br>Here is how our chosen puzzle looks in the excel file:
+              </p>
+              <span class="span6 text-center">
+              <img src="fol8.JPG"/></span>
+              <span class="span6 text-center">
+                <img src="fol2.JPG"/>
+              <p>
+                <a href="http://brainbashers.com/lightup.asp">http://brainbashers.com/lightup.asp</a><br>
+                Easy 5x5 April 25, 2020
+                </p> </span>
+              
+              <strong> IMPORTANT:</strong>Take a time to double check the right entry off all black boxes, one wrong placement of a box will generate the wrong file.
+              <p>
+              9)	After entering your data, press the “Run!” button. Watch the light path simulation while the file compile all the data for you. Once the message box shows, the data collection is done, Press “Ok”.
+              </p>
+               
+              <img src="fol9.JPG"/>
+              <p>
+              10)	Now you can export the data file straight to your computer. Click on the button “Export Output”. Then a Save as window will pop-up. Chose a name for the file and a location to save it. The extension of the file is fixed as “.txt” by default, that is the file you will need to load into AMPL to get the solution for your puzzle
+              </p>
+              <img src="fol10.PNG"/>
             <br><br><br>
             <h1 id="runHeader">How to Run AMPL</h1><br>
             <p> Double-click "sw.exe."
